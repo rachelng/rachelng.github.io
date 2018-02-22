@@ -15,10 +15,10 @@ Inside the function rollDice:
 
 
 function rollDice() {
-  var random1
-  var random2
-  var firstDie
-  var secondDie
+  var random1 = Math.floor(Math.random() * 6) + 1;
+  var random2 = Math.floor(Math.random() * 6) + 1;
+  var firstDie = 'dice-' + random1;
+  var secondDie = 'dice-' + random2;
 
   document.querySelector('#first-die').className = firstDie
   document.querySelector('#second-die').className = secondDie

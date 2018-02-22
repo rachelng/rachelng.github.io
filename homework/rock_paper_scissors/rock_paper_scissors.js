@@ -11,7 +11,7 @@ function init () {
 			return init();
 		}
 
-		console.log('The user selected: ' + choice + '!')''
+		console.log('The user selected: ' + choice + '!')
 
 		// triggers game
 		startGame(choice)
@@ -36,6 +36,10 @@ function startGame(userChoice) {
 // Use this randomly generated number to pull a value from the array (eg myArray[ranomNum])
 // Ensure you return this value!
 function generateCPUChoice () {
+	var choices = ['rock', 'paper', 'scissors'];
+	var randomNumber = Math.floor(Math.random() * 3);
+  
+	return choices[randomNumber];
 }
 
 // 2. The function compare takes two strings (userChoice and cpuChoice) that represent the user's and cpu's respective choices: 'rock', 'paper', or 'scissors'
@@ -43,6 +47,21 @@ function generateCPUChoice () {
 // For example, if userChoice === 'rock' and cpuChoice === 'scissors', then 'user' should be returned
 // Hint: use if/else/ele if logic to compare the values and return a winner
 function compare(userChoice, cpuChoice) {
+	if (userChoice === cpuChoice) {
+		return 'cpu & user';
+	} else if (userChoice === 'rock' && cpuChoice === 'paper' ) {
+		return 'cpu';
+	} else if (userChoice === 'rock' && cpuChoice === 'scissors' ) {
+		return 'user';
+	} else if (userChoice === 'scissors' && cpuChoice === 'paper' ) {
+		return 'user';
+	} else if (userChoice === 'scissors' && cpuChoice === 'rock' ) {
+		return 'cpu';
+	} else if (userChoice === 'paper' && cpuChoice === 'rock' ) {
+		return 'user';
+	} else if (userChoice === 'paper' && cpuChoice === 'scissors' ) {
+		return 'cpu';
+	}
 }
 
 
