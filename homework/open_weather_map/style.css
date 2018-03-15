@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background: rgba(222, 222, 222, 0.9);
+  border-radius: 3px;
+  padding: 20px;
+  text-align: center; 
+}
+
+body {
+  background: url(http://maristpoll.marist.edu/wp-content/uploads/2017/02/RB_2014_01_14_0587_ed-2_Official-Photo-FEATURED-IMAGE.jpg);
+  background-size: cover !important;
+}
+
+#map { 
+	margin-top: 50px;
+	width: 500px;
+	height: 300px;
+}
