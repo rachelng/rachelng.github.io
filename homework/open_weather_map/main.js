@@ -51,7 +51,7 @@ function handleSuccess(response) {
     zoom: 12
   });
 
-  $('#nyc-weather').append('<b>Temperature:</b> ' + response.main.temp + '<br />' + '<b>Humidity:</b> ' + response.main.humidity + '<br />' + '<b>Wind Speed:</b> ' + response.wind.speed)
+  $('#nyc-weather').append('<b>Temperature:</b> ' + response.main.temp + '&deg;C' + '<br />' + '<b>Humidity:</b> ' + response.main.humidity + '%' + '<br />' + '<b>Wind Speed:</b> ' + response.wind.speed + 'm/s')
 
   if (response.main.temp > 10) {
     $('body').css('background', 'url(https://thenypost.files.wordpress.com/2017/06/miamipostcard.jpg)')
