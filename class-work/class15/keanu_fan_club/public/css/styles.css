@@ -18,3 +18,16 @@ body {
   cursor: pointer;
   padding-left: 3px;
 }
+
+#message-board-container,
+#sign-in-container {
+  display: none;
+}
+
+#sign-out {
+  margin-top: 20px;
+  text-align: right;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}

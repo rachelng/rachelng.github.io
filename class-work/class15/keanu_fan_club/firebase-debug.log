@@ -1,0 +1,32 @@
+[debug] [2018-04-14T18:17:18.906Z] ----------------------------------------------------------------------
+[debug] [2018-04-14T18:17:18.908Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-04-14T18:17:18.908Z] CLI Version:   3.18.0
+[debug] [2018-04-14T18:17:18.908Z] Platform:      darwin
+[debug] [2018-04-14T18:17:18.908Z] Node Version:  v8.9.4
+[debug] [2018-04-14T18:17:18.909Z] Time:          Sat Apr 14 2018 14:17:18 GMT-0400 (EDT)
+[debug] [2018-04-14T18:17:18.909Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-14T18:17:18.925Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-14T18:17:18.925Z] > authorizing via signed-in user
+[debug] [2018-04-14T18:17:18.928Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/jsd-fp  
+  
+ Sat Apr 14 2018 14:17:18 GMT-0400 (EDT)
+[debug] [2018-04-14T18:17:19.322Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-14T18:17:19.323Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/jsd-fp/tokens  
+  
+ Sat Apr 14 2018 14:17:19 GMT-0400 (EDT)
+[debug] [2018-04-14T18:17:19.867Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-14T18:17:19.869Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/jsd-fp  
+  
+ Sat Apr 14 2018 14:17:19 GMT-0400 (EDT)
+[debug] [2018-04-14T18:17:21.169Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Racho/Dev/GA_JSD/rachelng.github.io/class-work/class15/keanu_fan_club'...
+[info] 
+[debug] [2018-04-14T18:17:21.172Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/390959173639/clients/_:getWebAppConfig  
+  
+ Sat Apr 14 2018 14:17:21 GMT-0400 (EDT)
+[debug] [2018-04-14T18:17:21.608Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

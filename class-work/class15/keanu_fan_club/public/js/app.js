@@ -1,7 +1,7 @@
-  // Get a reference to the root of the Database
-  var messageAppReference = firebase.database()
-  // Create a section for messages data in your db
-  var messagesReference = messageAppReference.ref('messages')
+// Get a reference to the root of the Database
+var messageAppReference = firebase.database()
+// Create a section for messages data in your db
+var messagesReference = messageAppReference.ref('messages')
 
 $('#message-form').submit(function(event) {
 	event.preventDefault()
@@ -10,7 +10,9 @@ $('#message-form').submit(function(event) {
 
 	messagesReference.push({
 		message: message,
-		votes: 0
+		votes: 0,
+		// add a `user` property to each message
+    	user: firebase.auth().currentUser.displayName,
 	})
 
 	$('#message').val('')
@@ -26,9 +28,10 @@ function getFanMessages() {
 			var message = msg.val()
 			var votes =  message.votes
 			var id = msg.key
+			var user = msg.val().user
 
 			// create li element
-			var $li = $('<li>').text(message.message)
+			var $li = $('<li>').text(message.message + ' - ' + user)
 
 			// create upvote element
 			var $upVoteElement = $('<i class="fa fa-thumbs-up pull-right">')
@@ -74,9 +77,39 @@ function updateMessage(id, votes) {
 
 function deleteMessage(id) {
 	// find message whose objectId is equal to the id we're searching with
-    var messageReference = messageAppReference.ref('messages/' + id)
+	var messageReference = messageAppReference.ref('messages/' + id)
 
-    messageReference.remove()
+	messageReference.remove()
 }
 
 getFanMessages()
+
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth())
+
+var uiConfig = {
+	callbacks: {
+		signInSuccessWithAuthResult: function() {
+			return false;
+		},
+	},
+	signInOptions: [
+		firebase.auth.EmailAuthProvider.PROVIDER_ID,
+	],
+}
+
+ui.start('#firebaseui-auth-container', uiConfig)
+
+firebase.auth().onAuthStateChanged(function(user) {
+	if (user) {
+		$('#sign-in-container').hide()
+		$('#message-board-container').show()
+	} else {
+		$('#sign-in-container').show()
+		$('#message-board-container').hide()
+	}
+})
+
+$('#sign-out').click(function() {
+	firebase.auth().signOut()
+})
